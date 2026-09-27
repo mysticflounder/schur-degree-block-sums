@@ -98,6 +98,6 @@ and `2x30`.
 
 ## Not in this directory
 
-The exhaustive searches of Remark 3.3, the isomorphism test of Remark 3.4,
-the Lean check of L(2) and L(3), and the solver searches of Section 6 were
-made with programs that are not in this repository.
+The exhaustive searches of Remark 3.3, the isomorphism test of Remark 3.4
+and the solver searches of Section 6 were made with programs that are not
+in this repository.

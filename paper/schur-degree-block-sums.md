@@ -1,5 +1,6 @@
 ---
 title: "The Schur degree of block sums: $L(4)=16$ and $L(5)\\ge 49$"
+title-meta: "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49"
 author: Adam McKenna
 date: "September 2026"
 abstract: |
@@ -34,7 +35,7 @@ of a set $X$: the least number of sumfree sets that cover $X$. They applied
 it to the set $\hat A$ of block sums of a finite sequence $A$ of positive
 integers, and they defined $L(n)$ as the least length $L$ such that every
 sequence of $L$ positive integers with average at most $n$ has
-$\operatorname{sdeg}(\hat A)\ge n$ (Definition 2.1 below). They proved
+$\operatorname{sdeg}(\hat A)\ge n$ (Section 2). They proved
 
 $$S(n-1)+1\le L(n)\le R_{n-1}(3)-1 \qquad\text{and}\qquad S(n)\le n\,L(n),$$
 
@@ -68,8 +69,8 @@ comes from a general lift (Lemma 4.1 and Corollary 4.2) from partitions of
 the nonzero elements of $\mathbb{Z}_{m_1}\times\mathbb{Z}_{m_2}$ into sets
 that are sumfree in the group.
 
-Conjectures 5.7 and 5.8 remain open. Conjecture 5.7 holds for $n=4$ and
-$n=5$ by the known values ($44\le 4\cdot 14$, $160\le 5\cdot 45$).
+Conjectures 5.7 and 5.8 remain open. Conjecture 5.7 holds for $2\le n\le 5$ by
+the known values [ER21, Table 1] ($44\le 4\cdot 14$, $160\le 5\cdot 45$).
 Conjecture 5.8 follows from Conjecture 5.6 at $n=6$, that is, from
 $L(6)=161$, and our results do not decide that case (Section 6).
 
@@ -80,8 +81,8 @@ formal upper bound is $L(5)\le65$.
 
 # 2. Definitions and results of Eliahou and Revuelta
 
-All sets below are sets of positive integers, except in the groups of
-Sections 4 to 6. A set $X$ is *covered by $n$ sumfree sets* when it is a
+All sumfree sets below, and all sets whose Schur degree we take, are sets
+of positive integers, except in the groups of Sections 4 to 6. A set $X$ is *covered by $n$ sumfree sets* when it is a
 subset of the union of $n$ sumfree sets. The *Schur degree*
 $\operatorname{sdeg}(X)$ is the least $n\ge 1$ such that $n$ sumfree sets
 cover $X$ [ER21, Definition 2.1]. For example,
@@ -93,7 +94,7 @@ $|A|=L$. A *block* of $A$ is a run $(a_i,\dots,a_j)$ of consecutive entries
 with $1\le i\le j\le L$, and $\hat A$ is the set of the sums of the blocks.
 The *average* of $A$ is $\mu(A)=(a_1+\dots+a_L)/L$.
 
-**Definition 2.1** [ER21, Definition 5.1]. Let $n\ge2$. Then $L(n)$ is the
+**Definition** [ER21, Definition 5.1]. Let $n\ge2$. Then $L(n)$ is the
 smallest positive integer with the following property: every sequence $A$
 of positive integers with $|A|=L(n)$ and $\mu(A)\le n$ has
 $\operatorname{sdeg}(\hat A)\ge n$.
@@ -105,19 +106,19 @@ length $L+1$ and average at most $n$ need not contain $L$ consecutive
 entries of average at most $n$, so a lower bound $L(n)\ge m$ needs a
 counterexample at every length $L$ with $1\le L<m$.
 
-We use the following results of [ER21]; the preprint [ER20] has the same
-numbering.
+We use the following results of [ER21], with their numbers in [ER21]; the
+preprint [ER20] has the same numbering.
 
-- **Proposition 2.5.** If $B$ is a block of $A$, then $\hat B\subseteq\hat A$.
-- **Proposition 2.7.** Let $X=\{x_0<x_1<\dots<x_L\}$ be a finite set of
+- **[ER21, Proposition 2.5].** If $B$ is a block of $A$, then $\hat B\subseteq\hat A$.
+- **[ER21, Proposition 2.7].** Let $X=\{x_0<x_1<\dots<x_L\}$ be a finite set of
   integers, and let $A=\Delta X=(x_1-x_0,\dots,x_L-x_{L-1})$ be its sequence
   of jumps. Then $\hat A=(X-X)\cap\mathbb{Z}_{>0}$.
-- **Proposition 3.2.** If $B$ is a block of $A$, then
+- **[ER21, Proposition 3.2].** If $B$ is a block of $A$, then
   $\operatorname{sdeg}(\hat B)\le\operatorname{sdeg}(\hat A)$.
-- **Theorem 4.1.** If $|A|\ge R_q(3)-1$, then
+- **[ER21, Theorem 4.1].** If $|A|\ge R_q(3)-1$, then
   $\operatorname{sdeg}(\hat A)\ge q+1$.
-- **Proposition 5.3.** $S(n-1)+1\le L(n)\le R_{n-1}(3)-1$ for $n\ge2$.
-- **Theorem 5.4.** $S(n)\le n\,L(n)$.
+- **[ER21, Proposition 5.3].** $S(n-1)+1\le L(n)\le R_{n-1}(3)-1$ for $n\ge2$.
+- **[ER21, Theorem 5.4].** $S(n)\le n\,L(n)$.
 
 # 3. The value $L(4)=16$
 
@@ -130,7 +131,7 @@ and $W=\Delta X$.
 **Lemma 3.1.** $\hat W=[1,3]\cup[6,13]\cup[16,22]\cup[25,31]$. This set
 has 25 elements.
 
-**Proof.** By Proposition 2.7, $\hat W$ is the set of positive differences
+**Proof.** By [ER21, Proposition 2.7], $\hat W$ is the set of positive differences
 of elements of $X$. Write each element of $X$ as $u+t$ with
 $u\in\{0,1,2,3\}$ and $t\in T=\{0,9,19,28\}$. Two elements with the same
 $t$ give the differences 1, 2 and 3. The positive differences of $T$ are 9,
@@ -163,16 +164,16 @@ $\hat W$.
 
 $\square$
 
-**Proof of Theorem 1.1.** By Proposition 5.3 and $R_3(3)=17$ [GG55],
+**Proof of Theorem 1.1.** By [ER21, Proposition 5.3] and $R_3(3)=17$ [GG55],
 $L(4)\le 16$. (Directly: every sequence of length $16=R_3(3)-1$ has
-$\operatorname{sdeg}(\hat A)\ge4$ by Theorem 4.1.)
+$\operatorname{sdeg}(\hat A)\ge4$ by [ER21, Theorem 4.1].)
 
 For the lower bound, let $1\le L\le 15$ and let $B$ be the block of the
 first $L$ entries of $W$. The sums of these blocks, for $L=1,\dots,15$, are
 $$1,2,3,9,10,11,12,19,20,21,22,28,29,30,31.$$
-Each is at most $4L$, so $\mu(B)\le 4$. By Proposition 3.2 and Lemma 3.2,
+Each is at most $4L$, so $\mu(B)\le 4$. By [ER21, Proposition 3.2] and Lemma 3.2,
 $\operatorname{sdeg}(\hat B)\le\operatorname{sdeg}(\hat W)\le 3<4$. So the
-property of Definition 2.1 for $n=4$ fails at every length $L\le 15$, and
+defining property of $L(4)$ fails at every length $L\le 15$, and
 $L(4)=16$. $\square$
 
 **Remark 3.3 (least sums; computer check).** A SAT computation shows that
@@ -181,7 +182,7 @@ sum at least 30. The solver CaDiCaL [BFF24] reported that the formula which
 allows every sum at most 29 is unsatisfiable, and drat-trim [WHH14]
 verified the proof of unsatisfiability. An independent exhaustive search
 without a SAT solver agrees. The first 14 entries of $W$ have sum 30. By
-Proposition 3.2 the least sum at length 15 is then 31, which $W$ attains.
+[ER21, Proposition 3.2] the least sum at length 15 is then 31, which $W$ attains.
 An exhaustive search found that $W$ is the only sequence $A$ of length 15
 with sum at most 31 and $\operatorname{sdeg}(\hat A)\le 3$.
 
@@ -213,7 +214,7 @@ increasing order they are $x_L=u+Mj$ with $L=jm_1+u$ and $0\le u\le m_1-1$.
 So $|A|=m_1m_2-1$, the entries of $A$ are positive, and the sum of the
 first $L$ entries is $x_L-x_0=x_L$.
 
-By Proposition 2.7, $\hat A=(X-X)\cap\mathbb{Z}_{>0}$. Let $d\in\hat A$,
+By [ER21, Proposition 2.7], $\hat A=(X-X)\cap\mathbb{Z}_{>0}$. Let $d\in\hat A$,
 $d=(u+Mj)-(u'+Mj')$, and put $r=u-u'$ and $e=j-j'$. Then $d=r+Me$ with
 $|r|\le m_1-1$ and $|e|\le m_2-1$. If $e<0$, then $d\le (m_1-1)-M<0$, which
 is false. So $e\ge0$, and if $e=0$ then $r=d\ge1$.
@@ -234,10 +235,12 @@ $\hat A$, and $\operatorname{sdeg}(\hat A)\le q$. $\square$
 
 The hypothesis $q\ge1$ is needed only in one degenerate case: for
 $m_1=m_2=1$ the sequence $A$ is empty, and $\operatorname{sdeg}(\emptyset)=1$.
-The proof uses $M\ge 3m_1-2$. For smaller $M$ the colouring of the proof
-often fails in random tests, but the conclusion can still hold: for
-$m_1=m_2=7$ and $M=16$ a SAT solver found a cover of $\hat A$ by four
-sumfree sets.
+The proof uses $M\ge 3m_1-2$. For smaller $M$ the map $\pi$ need not
+respect sums. For example, for $m_1=m_2=2$ and $M=3$ we have
+$X=\{0,1,3,4\}$, $\hat A=\{1,2,3,4\}$, $\pi(1)=(1,0)$ and $\pi(2)=(1,1)$;
+so $1+1=2$, but $\pi(1)+\pi(1)=(0,0)\ne\pi(2)$. The conclusion can still
+hold for smaller $M$: for $m_1=m_2=7$ and $M=16$ a SAT solver found a
+cover of $\hat A$ by four sumfree sets.
 
 **Corollary 4.2.** Let $n\ge3$ and $m_1,m_2\ge1$. If $n-1$ sets that are
 sumfree in $\mathbb{Z}_{m_1}\times\mathbb{Z}_{m_2}$ cover its nonzero
@@ -248,7 +251,7 @@ $L=jm_1+u$ with $0\le u\le m_1-1$. Then
 $x_L=u+(3m_1-2)j<3(u+m_1j)=3L$ when $L\ge1$. So the first $L$ entries of
 $A$ form a block $B$ with $\mu(B)<3\le n$, and
 $\operatorname{sdeg}(\hat B)\le\operatorname{sdeg}(\hat A)\le n-1$ by
-Proposition 3.2. So the property of Definition 2.1 fails at every length
+[ER21, Proposition 3.2]. So the defining property of $L(n)$ fails at every length
 $L\le m_1m_2-1$, and $L(n)\ge m_1m_2$. $\square$
 
 **Remarks.**
@@ -257,7 +260,7 @@ $L\le m_1m_2-1$, and $L(n)\ge m_1m_2$. $\square$
    is covered by $n-1$ sets sumfree in $\mathbb{Z}_N$, then their restriction
    to $[1,N-1]$ is a cover by $n-1$ sumfree sets of integers, so
    $N-1\le S(n-1)$ and the bound $L(n)\ge N$ is at most the lower bound of
-   Proposition 5.3. The gain comes from non-cyclic groups.
+   [ER21, Proposition 5.3]. The gain comes from non-cyclic groups.
 2. A partition of $(\mathbb{Z}_4\times\mathbb{Z}_4)\setminus\{0\}$ into
    three sets that are sumfree in the group exists [WSW72], as cited in
    [Ana23]. With it, Corollary 4.2 gives
@@ -267,7 +270,7 @@ $L\le m_1m_2-1$, and $L(n)\ge m_1m_2$. $\square$
    no monochromatic triangle. For symmetric sets the edge $\{g,h\}$ gets
    the colour of $g-h$ [GG55]; for sets that are not symmetric one uses an
    ordering of $G$ [AH72], as cited in [BCR25]. So $|G|<R_q(3)$, and Corollary 4.2 never gives
-   more than the upper bound of Proposition 5.3.
+   more than the upper bound of [ER21, Proposition 5.3].
 
 # 5. The bound $L(5)\ge 49$
 
@@ -284,7 +287,7 @@ of $4\cdot 12^2$ sums.
 | $C_3$ | (0,1) (0,6) (2,0) (2,2) (2,5) (3,1) (3,6) (4,1) (4,6) (5,0) (5,2) (5,5) |
 
 Corollary 4.2 with $n=5$ and $m_1=m_2=7$ gives $L(5)\ge49$. The upper
-bound $L(5)\le R_4(3)-1\le 61$ follows from Proposition 5.3 and
+bound $L(5)\le R_4(3)-1\le 61$ follows from [ER21, Proposition 5.3] and
 $R_4(3)\le 62$ [FKR04, Rad26]. $\square$
 
 With $M=19$ the sequence of Lemma 4.1 is
@@ -312,14 +315,15 @@ no bound above $L(5)\ge49$:
   no such cover, because Corollary 4.2 would give $L(5)\ge62>61$; and 61 is
   prime.
 
-Anabanti [Ana23] excludes partitions into four symmetric sets for all
-groups of order 51 to 61; the computation above does not assume symmetry.
-We know no sequence of length 49 or more that shows $L(5)>49$, and the
-exact value of $L(5)$ is open.
+Anabanti [Ana17, Ana23] excludes partitions into four symmetric sets for
+all groups of order 51 to 61; the computation above does not assume
+symmetry. We know no sequence of length 49 with average at most 5 and
+$\operatorname{sdeg}(\hat A)\le 4$; such a sequence would give
+$L(5)\ge 50$. The exact value of $L(5)$ is open.
 
 # 6. The case $n=6$
 
-For $n=6$, Proposition 5.3 and $R_5(3)\le 307$ [Rad26] give
+For $n=6$, [ER21, Proposition 5.3] and $R_5(3)\le 307$ [Rad26] give
 $161\le L(6)\le 306$. Conjecture 5.6 at $n=6$, that is $L(6)=161$, is the
 case that would give Conjecture 5.8.
 
@@ -335,28 +339,31 @@ $R_5(3)$. Our solver searches did not find one; they were not exhaustive.
 
 # 7. Formal verification
 
-The results of Sections 3 to 5 are formalized in Lean 4 [MU21] with Mathlib
-[mC20] (Lean v4.33.1). The definitions follow [ER21], with sets of natural
+The main results of Sections 3 to 5 are formalized in Lean 4 [MU21] with
+Mathlib [mC20] (Lean v4.33.1): Theorem 1.1, the bound $L(5)\ge49$ of
+Theorem 1.2, Lemma 4.1 and Corollary 4.2. The remarks and the computer
+checks are not formalized. The definitions follow [ER21], with sets of natural
 numbers and sequences given as lists of natural numbers; for a subset of
 the positive integers the Schur degree is the same in $\mathbb{N}$ and in
 $\mathbb{Z}$. The formal statements are:
 
 - $L(4)=16$;
 - $49\le L(5)\le 65$;
-- Lemma 4.1 and Corollary 4.2, with covers that need not be partitions;
-- Theorem 4.1 of [ER21] for sequences of natural numbers, and the upper
-  bound $L(k+1)\le\rho(k)-1$ of Proposition 5.3, where $\rho(0)=2$ and
+- Lemma 4.1, with the sequence $A$ given by its prefix sums $x_L$, and
+  Corollary 4.2;
+- [ER21, Theorem 4.1] for sequences of natural numbers, and the upper
+  bound $L(k+1)\le\rho(k)-1$ of [ER21, Proposition 5.3], both with
+  $\rho(k)$ in place of $R_k(3)$, where $\rho(0)=2$ and
   $\rho(k+1)=(k+1)(\rho(k)-1)+2$.
 
 The bound $\rho(k)$ is the pigeonhole upper bound for $R_k(3)$, proved in
-the formalization. Since $\rho(3)=17$, the formal proof of $L(4)\le16$ does
-not use the Greenwood–Gleason colouring. Since $\rho(4)=66>62$, the formal
-upper bound for $L(5)$ is 65, not 61. The finite checks (Lemma 3.2, the
-prefix sums of $W$, and the partition of Section 5) are done by the Lean
-kernel with `decide`, without native code. The only axioms used are
-`propext`, `Classical.choice` and `Quot.sound`. As a check of the
-definitions, a separate Lean proof (not part of the library) shows that
-they give $L(2)=2$ and $L(3)=5$, the values of [ER21].
+the formalization. Since $\rho(3)=17$, the formal proof of $L(4)\le16$
+proves the bound $R_3(3)\le17$ that it needs. Since $\rho(4)=66>62$, the formal
+upper bound for $L(5)$ is 65, not 61. The finite checks (the sumfree and
+covering parts of Lemma 3.2 and of the table of Section 5, and the prefix
+sums of $W$) are done by the Lean kernel with `decide`, without native
+code. The only axioms used are
+`propext`, `Classical.choice` and `Quot.sound`.
 
 The six main statements are also checked with the leanprover/comparator
 tool [LFRO]. The tool compares the statements, with every definition that
@@ -370,8 +377,7 @@ check the witnesses of Theorems 1.1 and 1.2 and the parameters of the
 colouring of Remark 3.4 without a solver, and they write the SAT formulas
 of Remark 3.3 and of Section 5; the repository gives the SHA-256 digests of
 the formulas of Section 5. The exhaustive searches of Remark 3.3, the
-isomorphism test of Remark 3.4, the Lean check of $L(2)$ and $L(3)$, and the
-solver searches of Section 6 were made with programs that are not in the
+isomorphism test of Remark 3.4 and the solver searches of Section 6 were made with programs that are not in the
 repository.
 
 # 8. Related work
@@ -383,8 +389,10 @@ Scholar list no work that cites [ER21] (September 2026). The textbook
 cites it.
 
 The use of partitions of finite groups into sumfree sets for Ramsey
-colourings is classical [GG55, AH72, Ana17, Ana23]. We found no earlier
-application of such partitions to block sums or to the Schur degree.
+colourings is classical [GG55, AH72, Ana17, Ana23]. Our searches (the
+citation databases above, and web searches for "Schur degree" and for the
+bound $n(S(n-1)+1)$, September 2026) found no earlier application of such
+partitions to block sums or to the Schur degree.
 
 # Acknowledgements and use of AI tools
 
