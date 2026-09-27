@@ -1,0 +1,6 @@
+.lake/
+lean/.lake/
+__pycache__/
+*.cnf
+*.drat
+.DS_Store

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the paper as below."
+title: "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49"
+authors:
+  - family-names: McKenna
+    given-names: Adam
+repository-code: "https://github.com/mysticflounder/schur-degree-block-sums"
+license: Apache-2.0
+keywords:
+  - Schur numbers
+  - Schur degree
+  - sumfree sets
+  - Ramsey numbers
+  - Lean 4
+preferred-citation:
+  type: article
+  title: "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49"
+  authors:
+    - family-names: McKenna
+      given-names: Adam
+  year: 2026
+  url: "https://github.com/mysticflounder/schur-degree-block-sums"

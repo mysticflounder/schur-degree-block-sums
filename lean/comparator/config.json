@@ -1,0 +1,18 @@
+{
+  "challenge_module": "ClassicalChallenge",
+  "solution_module": "ClassicalSolution",
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "theorem_names": [
+    "ClassicalSchurClaims.erL_four",
+    "ClassicalSchurClaims.erL_five_bounds",
+    "ClassicalSchurClaims.le_erL_of_groupPartition",
+    "ClassicalSchurClaims.lift_lemma",
+    "ClassicalSchurClaims.le_sdeg_blockSums",
+    "ClassicalSchurClaims.erL_le"
+  ]
+}

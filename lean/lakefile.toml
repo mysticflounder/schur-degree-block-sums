@@ -1,0 +1,25 @@
+name = "SchurDegreeBlockSums"
+defaultTargets = ["ClassicalSchur"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+
+# The library: definitions of Eliahou and Revuelta, L(4) = 16,
+# 49 ≤ L(5) ≤ 65, the lift lemma and its corollary.
+[[lean_lib]]
+name = "ClassicalSchur"
+
+# The comparator package (not in defaultTargets). ClassicalChallenge imports
+# Mathlib only and states the six theorems with `sorry`; ClassicalSolution
+# proves them from the library. Build with
+#   lake build ClassicalChallenge ClassicalSolution
+# and see comparator/README.md.
+[[lean_lib]]
+name = "ClassicalChallenge"
+srcDir = "comparator"
+
+[[lean_lib]]
+name = "ClassicalSolution"
+srcDir = "comparator"
