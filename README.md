@@ -86,7 +86,9 @@ tools" in the paper.
 A. McKenna, *The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49*,
 2026. Zenodo, doi:[10.5281/zenodo.22987189](https://doi.org/10.5281/zenodo.22987189).
 
-This DOI covers all versions. The DOI of version 1.0.0 is
+This DOI covers all versions. Version DOIs: 1.0.1,
+[10.5281/zenodo.22987688](https://doi.org/10.5281/zenodo.22987688) (the
+paper gives its DOI); 1.0.0,
 [10.5281/zenodo.22987190](https://doi.org/10.5281/zenodo.22987190).
 See also [CITATION.cff](CITATION.cff).
 
