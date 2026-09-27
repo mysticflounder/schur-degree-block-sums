@@ -388,12 +388,14 @@ application of such partitions to block sums or to the Schur degree.
 
 # Acknowledgements and use of AI tools
 
-{{NEEDS_ADAM_INPUT}} Draft statement, to be confirmed: The sequence $W$,
-the proofs, the computer checks and the Lean formalization were produced
-with the AI system Claude (Anthropic) under the direction of the author.
-Independent AI agents audited the proofs and the computations with their
-own code. The author has checked the content and takes responsibility
-for it.
+The sequence $W$, the lift of Section 4, the proofs, the computer checks
+and the Lean formalization were produced with the AI system Claude
+(Anthropic; model Claude Opus 5.5) under the direction of the author, on
+25 and 26 September 2026. Independent Claude agents audited the proofs and
+the computations with their own code. A GPT model (OpenAI), consulted by
+the author, pointed out that the formal upper bound for $L(5)$ is weaker
+than the bound of Theorem 1.2. The author has checked the content and
+takes responsibility for it.
 
 # References
 

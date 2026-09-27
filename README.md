@@ -72,6 +72,15 @@ this check on each push.
 See [checks/README.md](checks/README.md). The programs use only the Python
 standard library. The SAT checks use CaDiCaL and drat-trim.
 
+## Provenance
+
+The sequence W, the lift, the proofs, the programs and the Lean
+formalization were produced with the AI system Claude (Anthropic; model
+Claude Opus 5.5) under the direction of Adam McKenna, on 25 and 26
+September 2026. Independent Claude agents audited the proofs and the
+computations with their own code. See "Acknowledgements and use of AI
+tools" in the paper.
+
 ## How to cite
 
 A. McKenna, *The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49*,
