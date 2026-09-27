@@ -2,7 +2,7 @@
 title: "The Schur degree of block sums: $L(4)=16$ and $L(5)\\ge 49$"
 title-meta: "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49"
 author: Adam McKenna
-date: "September 2026"
+date: "September 2026. doi:10.5281/zenodo.22987189"
 abstract: |
   Eliahou and Revuelta defined a number $L(n)$ through the Schur degree of
   the set of block sums of a sequence of positive integers. They proved

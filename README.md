@@ -84,7 +84,10 @@ tools" in the paper.
 ## How to cite
 
 A. McKenna, *The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49*,
-2026. <https://github.com/mysticflounder/schur-degree-block-sums>.
+2026. Zenodo, doi:[10.5281/zenodo.22987189](https://doi.org/10.5281/zenodo.22987189).
+
+This DOI covers all versions. The DOI of version 1.0.0 is
+[10.5281/zenodo.22987190](https://doi.org/10.5281/zenodo.22987190).
 See also [CITATION.cff](CITATION.cff).
 
 ## License

@@ -4,6 +4,14 @@ title: "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49"
 authors:
   - family-names: McKenna
     given-names: Adam
+doi: 10.5281/zenodo.22987189
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22987189
+    description: "All versions (Zenodo concept DOI)"
+  - type: doi
+    value: 10.5281/zenodo.22987190
+    description: "Version 1.0.0"
 repository-code: "https://github.com/mysticflounder/schur-degree-block-sums"
 license: Apache-2.0
 keywords:
@@ -19,4 +27,5 @@ preferred-citation:
     - family-names: McKenna
       given-names: Adam
   year: 2026
+  doi: 10.5281/zenodo.22987189
   url: "https://github.com/mysticflounder/schur-degree-block-sums"
