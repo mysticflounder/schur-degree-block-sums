@@ -1,0 +1,20 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49",
+  "creators": [
+    {
+      "name": "McKenna, Adam"
+    }
+  ],
+  "description": "Eliahou and Revuelta defined a number L(n) through the Schur degree of the set of block sums of a sequence of positive integers. They proved S(n−1)+1 ≤ L(n) ≤ R_{n−1}(3)−1 and S(n) ≤ n·L(n), and they conjectured L(n) = S(n−1)+1, which would give the recursive bound S(n) ≤ n(S(n−1)+1) for the Schur numbers and S(6) ≤ 966. For n = 4 they proved 14 ≤ L(4) ≤ 16 and left the value open. We prove L(4) = 16 with one sequence of length 15 and an explicit partition of its 25 block sums into three sumfree sets. We then give a lift that turns a partition of the nonzero elements of ℤ_{m₁} × ℤ_{m₂} into n−1 sets that are sumfree in the group into the lower bound L(n) ≥ m₁m₂. A partition of ℤ₇ × ℤ₇ gives L(5) ≥ 49. So the conjecture is false for n = 4 and n = 5. The two recursive consequences, Conjectures 5.7 and 5.8, remain open. The value L(4) = 16, the bound L(5) ≥ 49 and the lift are also formalized in Lean 4 with Mathlib. This record contains the paper (PDF and Markdown source), the Lean 4 formalization with its comparator check, and the programs and DRAT certificates for the computer checks.",
+  "license": "apache-2.0",
+  "keywords": [
+    "Schur numbers",
+    "Schur degree",
+    "sumfree sets",
+    "block sums",
+    "Ramsey numbers",
+    "Lean 4"
+  ]
+}
