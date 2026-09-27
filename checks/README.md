@@ -11,8 +11,10 @@ from this directory.
 | `verify_L4.py` | Theorem 1.1 and Remark 3.4: no solver and no search |
 | `verify_L5.py` | Theorem 1.2: no solver and no search |
 | `check_sdeg.py` | a Schur-degree checker by backtracking, for any sequence |
+| `exhaustive_search.c` | Remark 3.3: least sums and the uniqueness of W, with no solver |
 | `ldeg_cnf.py` | the SAT formula of Remark 3.3 |
 | `group_sumfree_cnf.py` | the SAT formulas of Section 5 (limits of the lift) |
+| `certificates/` | the DRAT proofs of the eight UNSAT answers, compressed with xz |
 
 ## Theorem 1.1 (L(4) = 16) and Remark 3.4
 
@@ -54,7 +56,26 @@ The program decides by backtracking whether the block sums of the sequence
 have a partition into q sumfree sets, and checks the partition that it
 finds sum by sum.
 
-## Remark 3.3 (least sums at length 14)
+## Remark 3.3 (least sums, and the uniqueness of W)
+
+Exhaustive search, with no solver:
+
+```bash
+cc -O2 -o exhaustive_search exhaustive_search.c
+./exhaustive_search 13 13 3     # control, S(3) = 13: 1 sequence (all entries 1)
+./exhaustive_search 14 14 3     # control: 0 sequences
+./exhaustive_search 14 29 3     # 0 sequences
+./exhaustive_search 14 30 3     # 6 sequences
+./exhaustive_search 15 31 3     # 1 sequence: 1 1 1 6 1 1 1 7 1 1 1 6 1 1 1 (W)
+```
+
+The arguments are the length L, the largest sum S and the number Q of
+sumfree sets. The program counts the sequences of L positive integers with
+sum at most S whose block sums are covered by Q sumfree sets; the header of
+`exhaustive_search.c` explains the search. On the machine used for the
+paper, each of the last three runs took less than one minute.
+
+SAT formula for the length-14 bound, with its DRAT proof:
 
 ```bash
 python3 ldeg_cnf.py --q 3 --L 14 --sigma 29 -o r33.cnf
@@ -64,7 +85,8 @@ drat-trim r33.cnf r33.drat      # s VERIFIED
 
 The formula asks for a sequence of 14 positive integers with sum at most 29
 whose block sums have Schur degree at most 3. The header of `ldeg_cnf.py`
-describes the encoding.
+describes the encoding. SHA-256 of the formula:
+`dbe0be928cf7bdd34520fa618ce02fb66f77367cb05eafe924e10276d2a49228`.
 
 ## Section 5 (the limits of the lift at n = 5)
 
@@ -94,10 +116,38 @@ digits of the SHA-256 digest of each formula:
 | ℤ₂×ℤ₃₀ | 236 / 6,669 | 441c39577654b62a |
 
 The group arguments are `2x26`, `3x18`, `3x3x6`, `2x28`, `2x2x14`, `5x10`
-and `2x30`.
+and `2x30`. Full SHA-256 digests of the formulas:
+
+```
+131c269b0241f63e4b2e5a93117d57e69323a427f601d8dea24ec4f4213c09d0  2x26
+3807221cee343ff5794ea97b5fae1e4e192947540398111a00e000a851eace48  3x18
+02eb4eaf94a9fbfc415a08d1606f8b784a8bf247d29cc271c067b2403f90dcd3  3x3x6
+2a024113bbda0374e3317c3b2d9585c88b968733724b26eacb94e2b16921c111  2x28
+61b562b05d3190b2990b80da1908f5295380e2fe1028b5ab8f53814cf219395d  2x2x14
+95fd109febacfb815a8ec97277bc45c314005699c22696fb9fa17398208b5f56  5x10
+441c39577654b62ad1db6bad47faf9e9dd7e89ed11d704a9a05ea22c4975b0dc  2x30
+```
+
+## Certificates
+
+`certificates/` holds the DRAT proofs of the eight UNSAT answers (Remark 3.3
+and the seven groups of Section 5), in CaDiCaL's binary DRAT format,
+compressed with xz. They were made with CaDiCaL 3.0.0 and checked with
+drat-trim (a local build of https://github.com/marijnheule/drat-trim; the
+SHA-256 of the binary is in the log). To check one proof:
+
+```bash
+python3 group_sumfree_cnf.py 4 5x10 --sb > g5x10.cnf
+xz -dk certificates/g5x10.drat.xz
+drat-trim g5x10.cnf certificates/g5x10.drat     # s VERIFIED
+```
+
+`certificates/verification-log.txt` gives, for each formula, its first
+line, its SHA-256 digest, the solver answer, the drat-trim answer, and the
+size and SHA-256 digest of the uncompressed proof.
+`certificates/SHA256SUMS-xz.txt` gives the digests of the compressed files.
 
 ## Not in this directory
 
-The exhaustive searches of Remark 3.3, the isomorphism test of Remark 3.4
-and the solver searches of Section 6 were made with programs that are not
-in this repository.
+The isomorphism test of Remark 3.4 and the solver searches of Section 6
+were made with programs that are not in this repository.

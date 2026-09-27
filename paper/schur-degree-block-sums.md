@@ -271,6 +271,19 @@ $L\le m_1m_2-1$, and $L(n)\ge m_1m_2$. $\square$
    the colour of $g-h$ [GG55]; for sets that are not symmetric one uses an
    ordering of $G$ [AH72], as cited in [BCR25]. So $|G|<R_q(3)$, and Corollary 4.2 never gives
    more than the upper bound of [ER21, Proposition 5.3].
+4. Eliahou and Revuelta also pull sumfree sets back along maps. By
+   [ER21, Proposition 3.4], $\operatorname{sdeg}(f^{-1}(Y))\le\operatorname{sdeg}(Y)$
+   for a morphism $f$ of abelian groups. By [ER21, Theorem 4.3], a sequence
+   $A$ with $|A|\le R_n(3)-2$ that generates a subgroup isomorphic to
+   $\mathbb{Z}^{|A|}$ has $\operatorname{sdeg}(\hat A)\le n$. In
+   $\mathbb{Z}$ such a sequence has length at most 1; [ER21, Remark 4.4]
+   notes that the conclusion also holds for $A=(1,3,3^2,\dots,3^{N-1})$,
+   whose averages are large. So these results give no lower bound for
+   $L(n)$. The map $\pi$ of Lemma 4.1 is not a morphism from
+   $\mathbb{Z}$ to $G$; it respects only the sums $d_1+d_2=d_3$ inside
+   $\hat A$. What Lemma 4.1 adds is a sequence of positive integers for which
+   such a map exists and, with $M=3m_1-2$, all prefix averages are less
+   than 3.
 
 # 5. The bound $L(5)\ge 49$
 
@@ -374,11 +387,11 @@ the proofs with the Lean kernel and with the independent nanoda kernel.
 configuration and programs for the computer checks are in the repository
 <https://github.com/mysticflounder/schur-degree-block-sums>. The programs
 check the witnesses of Theorems 1.1 and 1.2 and the parameters of the
-colouring of Remark 3.4 without a solver, and they write the SAT formulas
-of Remark 3.3 and of Section 5; the repository gives the SHA-256 digests of
-the formulas of Section 5. The exhaustive searches of Remark 3.3, the
-isomorphism test of Remark 3.4 and the solver searches of Section 6 were made with programs that are not in the
-repository.
+colouring of Remark 3.4 without a solver, make the exhaustive searches of
+Remark 3.3, and write the SAT formulas of Remark 3.3 and of Section 5. The
+repository also gives the SHA-256 digests of these formulas and their DRAT
+proofs. The isomorphism test of Remark 3.4 and the solver searches of
+Section 6 were made with programs that are not in the repository.
 
 # 8. Related work
 
