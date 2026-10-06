@@ -3,10 +3,12 @@ Copyright (c) 2026 Adam McKenna. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam McKenna
 -/
-import ClassicalSchur.Basic
-import ClassicalSchur.Ramsey
-import ClassicalSchur.Lift
-import ClassicalSchur.Values
+module
+
+public import ClassicalSchur.Basic
+public import ClassicalSchur.Ramsey
+public import ClassicalSchur.Lift
+public import ClassicalSchur.Values
 
 /-!
 # Classical Schur numbers: the Eliahou–Revuelta number `L(n)`

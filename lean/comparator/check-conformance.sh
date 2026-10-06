@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Offline pre-flight for the comparator package. It does NOT
-# replace a leanprover/comparator run (statement identity, axiom compliance,
-# nanoda and Lean kernel replay; see README.md and
-# .github/workflows/comparator.yml). It checks:
+# replace a `lake comparator` run (statement identity, axiom compliance,
+# replay by the Lean kernel, nanoda and con-ron; see README.md,
+# verify-comparator.sh and .github/workflows/comparator.yml). It checks:
 #
 #   1. ClassicalChallenge (Mathlib only, `sorry` stubs) and ClassicalSolution
 #      (proofs from the ClassicalSchur library) build.
@@ -78,4 +78,4 @@ fi
 cat "$OUT"
 echo "OK: $NAMES theorems build; each axiom closure is a subset of"
 echo "    {propext, Classical.choice, Quot.sound}. Statement identity with"
-echo "    ClassicalChallenge is checked by the leanprover/comparator run."
+echo "    ClassicalChallenge is checked by lake comparator (verify-comparator.sh)."

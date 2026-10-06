@@ -3,7 +3,9 @@ Copyright (c) 2026 Adam McKenna. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam McKenna
 -/
-import ClassicalSchur.Basic
+module
+
+public import ClassicalSchur.Basic
 
 /-!
 # Monochromatic triangles and ER Theorem 4.1
@@ -19,6 +21,8 @@ sequence of length at least `ramseyBound k − 1` has `sdeg(Â) ≥ k + 1`.
 The pairs of prefix indices are coloured by a cover set that holds their
 block sum; a monochromatic triangle gives `x + y = z` in one sumfree set.
 -/
+
+@[expose] public section
 
 namespace ClassicalSchur
 
@@ -100,7 +104,7 @@ theorem not_coveredBySumFree_blockSums {k N : ℕ} (hR : TriangleRamsey k N)
   let col : ℕ → ℕ → ℕ := fun x y =>
     if h : x < y ∧ y ≤ A.length then (f ⟨(x, y), h⟩).val else 0
   have hcol : ∀ x y (h : x < y ∧ y ≤ A.length), col x y = (f ⟨(x, y), h⟩).val :=
-    fun x y h => dif_pos h
+    fun x y h => dite_eq_left h
   obtain ⟨x, hx, y, hy, z, hz, hxy, hyz, h1, h2⟩ :=
     hR (Finset.range (A.length + 1)) (Finset.range q) col (by simpa using hq)
       (by simpa using hA)

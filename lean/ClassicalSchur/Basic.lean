@@ -3,7 +3,9 @@ Copyright (c) 2026 Adam McKenna. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam McKenna
 -/
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Schur degree of block-sum sets (Eliahou–Revuelta)
@@ -23,6 +25,8 @@ sets*, Discrete Math. 344(5) (2021) 112332, doi:10.1016/j.disc.2021.112332
 The ambient set is `ℕ`, not `ℤ`: for `X ⊆ ℕ` the least number of sumfree sets
 that cover `X` is the same in both.
 -/
+
+@[expose] public section
 
 namespace ClassicalSchur
 

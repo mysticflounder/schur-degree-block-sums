@@ -3,7 +3,9 @@ Copyright (c) 2026 Adam McKenna. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam McKenna
 -/
-import ClassicalSchur.Lift
+module
+
+public import ClassicalSchur.Lift
 
 /-!
 # `L(4) = 16` and `49 ≤ L(5) ≤ 65`
@@ -21,6 +23,8 @@ states `L(4) = 14` and `L(5) = 45`.
 
 The finite checks use kernel `decide`.
 -/
+
+@[expose] public section
 
 namespace ClassicalSchur
 

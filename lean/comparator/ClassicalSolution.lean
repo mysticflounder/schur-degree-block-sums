@@ -3,7 +3,9 @@ Copyright (c) 2026 Adam McKenna. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam McKenna
 -/
-import ClassicalSchur
+module
+
+public import ClassicalSchur
 
 /-!
 # Comparator solution: the Eliahou–Revuelta number `L(n)`
@@ -23,6 +25,8 @@ Library theorems (all in the `ClassicalSchur` library): `erL_four` and
 `lift_lemma` (`Lift.lean`), `le_sdeg_blockSums` and `erL_le`
 (`Ramsey.lean`).
 -/
+
+@[expose] public section
 
 namespace ClassicalSchurClaims
 

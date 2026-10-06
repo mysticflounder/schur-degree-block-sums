@@ -4,7 +4,7 @@ defaultTargets = ["ClassicalSchur"]
 [[require]]
 name = "mathlib"
 scope = "leanprover-community"
-rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+rev = "c55e6e786f49471c72fbddbec5415808896aec1e"
 
 # The library: definitions of Eliahou and Revuelta, L(4) = 16,
 # 49 ≤ L(5) ≤ 65, the lift lemma and its corollary.

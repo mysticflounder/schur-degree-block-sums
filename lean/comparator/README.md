@@ -1,7 +1,8 @@
 # Comparator check
 
 This directory checks the six main theorems of the `ClassicalSchur` library
-with [leanprover/comparator](https://github.com/leanprover/comparator).
+with `lake comparator`, the comparator that the Lean toolchain of
+`../lean-toolchain` bundles.
 
 | File | Content |
 |---|---|
@@ -10,7 +11,7 @@ with [leanprover/comparator](https://github.com/leanprover/comparator).
 | `config.json` | The six theorem names, the permitted axioms (`propext`, `Quot.sound`, `Classical.choice`) and `enable_nanoda: true`. |
 | `axiom-audit.lean` | `#print axioms` for each of the six theorems. |
 | `check-conformance.sh` | Builds both modules, checks that the audit lists the configured theorems, and checks each axiom closure against the three permitted axioms. |
-| `fake-landrun.sh` | A shim for macOS, where the `landrun` sandbox does not run. |
+| `verify-comparator.sh` | Runs `lake comparator` on a copy of `config.json` in which the kernels nanoda and con-ron of the toolchain replace `enable_nanoda`. |
 
 ## The six theorems
 
@@ -39,7 +40,9 @@ the library theorems, so the kernel must unfold each `ClassicalSchurClaims`
 definition to the `ClassicalSchur` definition of the same name. For
 `ramseyBound` (a structural recursion) a private induction lemma does this.
 A change to a definition in `ClassicalChallenge.lean` alone makes the run
-fail with `Const does not match between challenge and target`.
+fail with `Const does not match between challenge and target`. All Lean files
+use the module system; the definitions of both files are in an
+`@[expose] public section`, so that their values are exported.
 
 ## Run it
 
@@ -49,17 +52,29 @@ Pre-flight, from the repository root:
 lean/comparator/check-conformance.sh
 ```
 
-Comparator, from `lean/`. Build the comparator (tag v4.33.0, commit
-3927ad38) with this repository's `lean-toolchain`, its `lean4export`
-dependency, and [nanoda](https://github.com/ammkrn/nanoda_lib). On Linux
-put [landrun](https://github.com/Zouuup/landrun) on `PATH`; on macOS put
-`fake-landrun.sh` on `PATH` under the name `landrun`. The workflow
-[`../../.github/workflows/comparator.yml`](../../.github/workflows/comparator.yml)
-gives the exact commits and build steps.
+Comparator, from the repository root, on Linux with
+[bubblewrap](https://github.com/containers/bubblewrap) (`bwrap`) and `jq`:
 
 ```bash
-lake build ClassicalChallenge ClassicalSolution
-PATH="<landrun dir>:<lean4export bin dir>:<nanoda bin dir>:$PATH" \
-  lake env <comparator binary> comparator/config.json
-# Success ends with "Your solution is okay!".
+lean/comparator/verify-comparator.sh
 ```
+
+The script checks that the toolchain of `../lean-toolchain` bundles
+`lake comparator`, `leanexport`, `leanchecker`, `nanoda_bin` and `con-ron`.
+It writes a copy of `config.json` with the same theorem names and permitted
+axioms, in which `external_kernels` names the toolchain's `nanoda_bin` and
+`con-ron` in place of `enable_nanoda`. Then it runs, from `lean/`,
+
+```bash
+lake exe cache get
+lake comparator --config <the copy>
+```
+
+`lake comparator` builds and exports `ClassicalChallenge` and
+`ClassicalSolution` in its `bwrap` sandbox, compares the statements, checks
+the axioms, and replays the proofs with the Lean kernel, nanoda and con-ron.
+It exits with status 0 and prints "Your solution is okay!" when it accepts
+the solution. Nothing that judges is built from a
+pin: every tool comes from the toolchain. The workflow
+[`../../.github/workflows/comparator.yml`](../../.github/workflows/comparator.yml)
+runs the pre-flight and this script.

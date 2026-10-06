@@ -353,7 +353,7 @@ $R_5(3)$. Our solver searches did not find one; they were not exhaustive.
 # 7. Formal verification
 
 The main results of Sections 3 to 5 are formalized in Lean 4 [MU21] with
-Mathlib [mC20] (Lean v4.33.1): Theorem 1.1, the bound $L(5)\ge49$ of
+Mathlib [mC20] (Lean v4.35.0-rc3): Theorem 1.1, the bound $L(5)\ge49$ of
 Theorem 1.2, Lemma 4.1 and Corollary 4.2. The remarks and the computer
 checks are not formalized. The definitions follow [ER21], with sets of natural
 numbers and sequences given as lists of natural numbers; for a subset of

@@ -52,7 +52,7 @@ and Radziszowski (2004). The finite checks use the Lean kernel (`decide`),
 with no native code. The only axioms are `propext`, `Classical.choice` and
 `Quot.sound`.
 
-Build (Lean v4.33.1, Mathlib as pinned in `lean/lake-manifest.json`):
+Build (Lean v4.35.0-rc3, Mathlib as pinned in `lean/lake-manifest.json`):
 
 ```bash
 cd lean
@@ -60,12 +60,12 @@ lake exe cache get
 lake build
 ```
 
-The six theorems are also checked with
-[leanprover/comparator](https://github.com/leanprover/comparator) against a
-statement file that imports only Mathlib; see
-[lean/comparator/README.md](lean/comparator/README.md). The workflow
-[.github/workflows/comparator.yml](.github/workflows/comparator.yml) runs
-this check on each push.
+The six theorems are also checked with `lake comparator`, the comparator
+that the Lean toolchain bundles, against a statement file that imports only
+Mathlib; see [lean/comparator/README.md](lean/comparator/README.md). The
+workflow [.github/workflows/comparator.yml](.github/workflows/comparator.yml)
+runs this check on each push that changes `lean/`, `scripts/` or the
+workflow, on each pull request, and when it is started by hand.
 
 ## Computer checks
 

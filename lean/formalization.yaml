@@ -1,0 +1,194 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49"
+  description: >-
+    A Lean 4 formalization, with Mathlib, of the main results of the paper
+    "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49"
+    (paper/schur-degree-block-sums.md in this repository). Eliahou and
+    Revuelta (Discrete Math. 344 (2021) 112332) defined a number L(n) through
+    the Schur degree of the set of block sums of a sequence of positive
+    integers, proved S(n−1) + 1 ≤ L(n) ≤ R_{n−1}(3) − 1 and S(n) ≤ n·L(n),
+    and conjectured L(n) = S(n−1) + 1 (their Conjecture 5.6), that is,
+    L(4) = 14 and L(5) = 45. The formalization proves L(4) = 16 (erL_four),
+    49 ≤ L(5) ≤ 65 (erL_five_bounds), the lift that turns a cover of the
+    nonzero elements of ZMod m₁ × ZMod m₂ by q sets that are sumfree in the
+    group into a sequence whose block sums have Schur degree at most q
+    (lift_lemma), its corollary m₁m₂ ≤ L(n) (le_erL_of_groupPartition), and
+    Theorem 4.1 and the upper bound of Proposition 5.3 of Eliahou and
+    Revuelta, with the pigeonhole bound ramseyBound k in place of R_k(3)
+    (le_sdeg_blockSums, erL_le). So Conjecture 5.6 is false for n = 4 and
+    n = 5. The Lean upper bound for L(5) is 65, not the bound 61 of the
+    paper: the formalization uses the pigeonhole bound R₄(3) ≤ 66 and not
+    the bound R₄(3) ≤ 62 of Fettes, Kramer and Radziszowski. The finite
+    checks use the Lean kernel (decide), with no native code. The sequence
+    W, the lift, the proofs, the programs and the Lean formalization were
+    produced with the AI system Claude (Anthropic; model Claude Opus 5.5)
+    under the direction of the author.
+  authors:
+    - "Adam McKenna"
+  responsible_maintainers:
+    - "Adam McKenna"
+  license: "Apache-2.0"
+
+classification:
+  arxiv: ["math.CO"]
+  # TODO(Adam): confirm the MSC 2020 codes. The paper and the Zenodo record
+  # give none; these are proposed (Ramsey theory; other combinatorial number
+  # theory; generalized Ramsey theory).
+  msc2020: ["05D10", "11B75", "05C55"]
+
+sources:
+  - title: "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49 (paper in this repository, paper/schur-degree-block-sums.md)"
+    authors: ["Adam McKenna"]
+    id: "https://doi.org/10.5281/zenodo.22987189"
+    type: original-proof
+    relationship: other
+    note: >-
+      The paper proves L(4) = 16 (Theorem 1.1), L(5) ≥ 49 (Theorem 1.2),
+      the lift (Lemma 4.1) and its corollary (Corollary 4.2); Section 7
+      describes the formalization. Its Section 8 records the literature
+      check: no work after Eliahou and Revuelta (2021) on L(n) or on their
+      Conjectures 5.6 to 5.8 was found, and the citation databases Crossref,
+      OpenAlex, OpenCitations and Semantic Scholar list no work that cites
+      it (September 2026).
+  - title: "The Schur degree of additive sets"
+    authors: ["Shalom Eliahou", "M. P. Revuelta"]
+    id: "https://doi.org/10.1016/j.disc.2021.112332"
+    type: paper
+    relationship: background
+    note: >-
+      Discrete Math. 344(5) (2021) 112332. Source of the definitions
+      (sumfree sets, covers by sumfree sets, the Schur degree, block sums
+      and L(n)) and of Conjecture 5.6, which the paper refutes at n = 4 and
+      n = 5. The compared theorems le_sdeg_blockSums and erL_le formalize
+      their Theorem 4.1 and the upper bound of their Proposition 5.3, with
+      the pigeonhole bound ramseyBound k in place of R_k(3).
+  - title: "The Schur degree of additive sets (preprint)"
+    authors: ["Shalom Eliahou", "M. P. Revuelta"]
+    id: "https://arxiv.org/abs/2006.01502v1"
+    type: preprint
+    relationship: background
+    note: "The arXiv preprint (2020) of the paper above."
+  - title: "Combinatorial relations and chromatic graphs"
+    authors: ["R. E. Greenwood", "A. M. Gleason"]
+    id: "https://doi.org/10.4153/CJM-1955-001-4"
+    type: paper
+    relationship: background
+    note: >-
+      Canad. J. Math. 7 (1955) 1–7. The paper uses R_3(3) = 17 from it in
+      the proof of L(4) ≤ 16. The formalization does not use this result:
+      it proves the pigeonhole bound ramseyBound 3 = 17 for R_3(3) itself.
+      The paper also cites it for partitions of finite groups into sumfree
+      sets as Ramsey colourings.
+  - title: "An upper bound of 62 on the classical Ramsey number R(3,3,3,3)"
+    authors: ["S. E. Fettes", "R. L. Kramer", "S. P. Radziszowski"]
+    type: paper
+    relationship: background
+    note: >-
+      Ars Combin. 72 (2004) 41–63. With the bound of Eliahou and Revuelta,
+      R_4(3) ≤ 62 gives L(5) ≤ 61 in the paper. The formalization does not
+      use it; its upper bound for L(5) is 65.
+  - title: "A problem of Schur and its generalizations"
+    authors: ["H. L. Abbott", "D. Hanson"]
+    id: "https://doi.org/10.4064/aa-20-2-175-187"
+    type: paper
+    relationship: background
+    note: >-
+      Acta Arith. 20(2) (1972) 175–187. Cited by the paper for partitions
+      of finite groups into sumfree sets as Ramsey colourings.
+  - title: "A counterexample on a group partitioning problem"
+    authors: ["C. S. Anabanti"]
+    id: "https://eprints.bbk.ac.uk/id/eprint/26765"
+    type: preprint
+    relationship: background
+    note: >-
+      Birkbeck Mathematics Preprint Series, Preprint No. 37 (2017). Cited by
+      the paper for partitions of finite groups into sumfree sets as Ramsey
+      colourings.
+  - title: "The Ramsey number R_4(3) is not solvable by group partition means"
+    authors: ["C. S. Anabanti"]
+    id: "https://doi.org/10.56415/qrs.v31.12"
+    type: paper
+    relationship: background
+    note: >-
+      Quasigroups Related Systems 31(2) (2023) 165–174. Cited by the paper
+      for partitions of finite groups into sumfree sets as Ramsey
+      colourings.
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Six theorems are compared (lean/comparator/config.json): erL_four
+    (L(4) = 16), erL_five_bounds (49 ≤ L(5) ≤ 65), lift_lemma (Lemma 4.1 of
+    the paper), le_erL_of_groupPartition (Corollary 4.2), le_sdeg_blockSums
+    (Theorem 4.1 of Eliahou and Revuelta, with ramseyBound k in place of
+    R_k(3)) and erL_le (the upper bound of their Proposition 5.3, with the
+    same bound). The bound L(5) ≤ 61 of the paper is not formalized. The
+    remarks and the computer checks of the paper are not formalized.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: agent
+      models: ["claude-opus-5-5"]
+      # TODO(Adam): confirm the framework. The commits carry the
+      # Co-Authored-By line of Claude Opus 5.5, but the repository text does
+      # not name the tool.
+      framework: "Claude Code"
+      tool_setup: >-
+        The AI system Claude (Anthropic; model Claude Opus 5.5) produced the
+        sequence W, the lift of Section 4 of the paper, the proofs, the
+        programs for the computer checks and the Lean formalization, under
+        the direction of the author, on 25 and 26 September 2026.
+        Independent Claude agents audited the proofs and the computations
+        with their own code. Commit fd0b87f applies the text fixes of an
+        independent audit, which found no mathematical error. On 5 October 2026 a Claude agent
+        moved the Lean project to Lean v4.35.0-rc3 and the Lean module
+        system, and the comparator check to the toolchain's lake comparator.
+    - method: other
+      framework: "GPT (OpenAI)"
+      tool_setup: >-
+        A GPT model (OpenAI), consulted by the author, pointed out that the
+        formal upper bound for L(5) is weaker than the bound of Theorem 1.2
+        of the paper. Commit 9a42366 (the exhaustive search, the DRAT
+        certificates and Remark 4 of Section 4) answers an adversarial
+        review by GPT of commit 89ec343.
+  notes: >-
+    The author directed the work, has checked the content and takes
+    responsibility for it.
+
+fidelity:
+  divergences: >-
+    Natural numbers are the ambient type: sets are subsets of ℕ and
+    sequences are lists of natural numbers. For a subset of the positive
+    integers the Schur degree is the same in ℕ and in ℤ. The Schur degree
+    sdeg X takes values in ℕ∞ and is ⊤ when no finite cover exists. erL n
+    is defined for every n; Eliahou and Revuelta define L(n) for n ≥ 2. The
+    average of the empty sequence is 0; erL uses only lengths L > 0.
+    ramseyBound k (ramseyBound 0 = 2, ramseyBound (k + 1) =
+    (k + 1)(ramseyBound k − 1) + 2) is the pigeonhole upper bound for
+    R_k(3) and replaces R_k(3) in le_sdeg_blockSums and erL_le;
+    ramseyBound 3 = 17 = R_3(3) and ramseyBound 4 = 66, so the Lean upper
+    bound for L(5) is 65, not 61. In lift_lemma the sequence is given by its
+    prefix sums. The paper, Section 7, lists the formal statements.
+
+review:
+  status: "agent-reviewed"
+  reviewers: []
+  notes: >-
+    The Lean kernel checks every proof; the finite checks use decide, with
+    no native code. Independent Claude agents audited the proofs and the
+    computations of the paper with their own code. Commit fd0b87f applies
+    the text fixes of an independent audit, which found no mathematical
+    error. Commit 9a42366 answers an
+    adversarial review by GPT (OpenAI) of commit 89ec343. The author has
+    checked the content and takes responsibility for it. The paper is a
+    preprint (Zenodo, doi:10.5281/zenodo.22987189). The workflow
+    .github/workflows/comparator.yml runs lake comparator on the six
+    compared theorems.
+  # TODO(Adam): state whether there has been any human peer review.

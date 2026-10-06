@@ -3,7 +3,9 @@ Copyright (c) 2026 Adam McKenna. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam McKenna
 -/
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Comparator challenge: the Eliahou–Revuelta number `L(n)`
@@ -35,6 +37,8 @@ Deliberate differences from ER:
   `R_k(3)`, not `R_k(3)`: `ramseyBound 3 = 17 = R_3(3)`, and
   `ramseyBound 4 = 66`.
 -/
+
+@[expose] public section
 
 namespace ClassicalSchurClaims
 

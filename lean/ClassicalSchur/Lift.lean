@@ -3,7 +3,9 @@ Copyright (c) 2026 Adam McKenna. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam McKenna
 -/
-import ClassicalSchur.Ramsey
+module
+
+public import ClassicalSchur.Ramsey
 
 /-!
 # A lift from `ℤ_{m₁} × ℤ_{m₂}` to block-sum sets
@@ -19,6 +21,8 @@ nonzero elements into `q` sets that are sumfree in the group gives a cover
 of `Â` by `q` sumfree sets (Lemma 4.1). With `M = 3m₁ − 2` all prefix averages
 are at most 3, which gives `L(n) ≥ m₁m₂` (Corollary 4.2).
 -/
+
+@[expose] public section
 
 namespace ClassicalSchur
 
