@@ -37,35 +37,49 @@ classification:
   msc2020: ["05D10", "11B75", "05C55"]
 
 sources:
-  - title: "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49 (paper in this repository, paper/schur-degree-block-sums.md)"
+  - title: "The Schur degree of block sums: L(4) = 16 and L(5) ≥ 49 (preprint; paper/schur-degree-block-sums.md in this repository)"
     authors: ["Adam McKenna"]
     id: "https://doi.org/10.5281/zenodo.22987189"
-    type: original-proof
-    relationship: other
+    type: paper
+    relationship: formalizes
     note: >-
-      The paper proves L(4) = 16 (Theorem 1.1), L(5) ≥ 49 (Theorem 1.2),
-      the lift (Lemma 4.1) and its corollary (Corollary 4.2); Section 7
-      describes the formalization. Its Section 8 records the literature
-      check: no work after Eliahou and Revuelta (2021) on L(n) or on their
-      Conjectures 5.6 to 5.8 was found, and the citation databases Crossref,
-      OpenAlex, OpenCitations and Semantic Scholar list no work that cites
-      it (September 2026).
+      The compared theorems erL_four, erL_five_bounds (its lower bound),
+      lift_lemma and le_erL_of_groupPartition formalize Theorem 1.1
+      (L(4) = 16), the bound L(5) ≥ 49 of Theorem 1.2, Lemma 4.1 (the lift)
+      and Corollary 4.2 of this paper. These four results are new results of
+      the paper, and the paper is their first presentation. The paper and
+      the Lean formalization were written together: both are in the first
+      commit (21df780) of this repository. The upper bound L(5) ≤ 61 of
+      Theorem 1.2 is not formalized; erL_five_bounds has the upper bound 65
+      from the adapted Proposition 5.3 of Eliahou and Revuelta (next entry).
+      Section 7 of the paper describes the formalization. Its Section 8
+      records the literature check: no work after Eliahou and Revuelta
+      (2021) on L(n) or on their Conjectures 5.6 to 5.8 was found, and the
+      citation databases Crossref, OpenAlex, OpenCitations and Semantic
+      Scholar list no work that cites it (September 2026). The paper is a
+      preprint on Zenodo, without peer review.
   - title: "The Schur degree of additive sets"
     authors: ["Shalom Eliahou", "M. P. Revuelta"]
     id: "https://doi.org/10.1016/j.disc.2021.112332"
     type: paper
-    relationship: background
+    relationship: adapts
     note: >-
-      Discrete Math. 344(5) (2021) 112332. Source of the definitions
-      (sumfree sets, covers by sumfree sets, the Schur degree, block sums
-      and L(n)) and of Conjecture 5.6, which the paper refutes at n = 4 and
-      n = 5. The compared theorems le_sdeg_blockSums and erL_le formalize
-      their Theorem 4.1 and the upper bound of their Proposition 5.3, with
-      the pigeonhole bound ramseyBound k in place of R_k(3).
+      Discrete Math. 344(5) (2021) 112332. The compared theorems
+      le_sdeg_blockSums and erL_le formalize their Theorem 4.1 (if
+      |A| ≥ R_q(3) − 1, then the set of block sums of A has Schur degree at
+      least q + 1) and the upper bound L(n) ≤ R_{n−1}(3) − 1 of their
+      Proposition 5.3, with the pigeonhole bound ramseyBound k ≥ R_k(3) in
+      place of R_k(3). So the Lean statements are weaker than theirs. The
+      upper bounds L(4) ≤ 16 and L(5) ≤ 65 in erL_four and erL_five_bounds
+      come from these adapted results (ramseyBound 3 = 17, ramseyBound 4 =
+      66). The paper is also the source of the definitions (sumfree sets,
+      covers by sumfree sets, the Schur degree, block sums and L(n)) and of
+      Conjecture 5.6, which the repository paper refutes at n = 4 and
+      n = 5.
   - title: "The Schur degree of additive sets (preprint)"
     authors: ["Shalom Eliahou", "M. P. Revuelta"]
     id: "https://arxiv.org/abs/2006.01502v1"
-    type: preprint
+    type: paper
     relationship: background
     note: "The arXiv preprint (2020) of the paper above."
   - title: "Combinatorial relations and chromatic graphs"
@@ -98,7 +112,7 @@ sources:
   - title: "A counterexample on a group partitioning problem"
     authors: ["C. S. Anabanti"]
     id: "https://eprints.bbk.ac.uk/id/eprint/26765"
-    type: preprint
+    type: paper
     relationship: background
     note: >-
       Birkbeck Mathematics Preprint Series, Preprint No. 37 (2017). Cited by
