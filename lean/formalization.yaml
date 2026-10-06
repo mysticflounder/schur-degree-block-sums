@@ -34,9 +34,6 @@ project:
 
 classification:
   arxiv: ["math.CO"]
-  # TODO(Adam): confirm the MSC 2020 codes. The paper and the Zenodo record
-  # give none; these are proposed (Ramsey theory; other combinatorial number
-  # theory; generalized Ramsey theory).
   msc2020: ["05D10", "11B75", "05C55"]
 
 sources:
@@ -136,9 +133,6 @@ automation:
   methods:
     - method: agent
       models: ["claude-opus-5-5"]
-      # TODO(Adam): confirm the framework. The commits carry the
-      # Co-Authored-By line of Claude Opus 5.5, but the repository text does
-      # not name the tool.
       framework: "Claude Code"
       tool_setup: >-
         The AI system Claude (Anthropic; model Claude Opus 5.5) produced the
@@ -190,5 +184,4 @@ review:
     checked the content and takes responsibility for it. The paper is a
     preprint (Zenodo, doi:10.5281/zenodo.22987189). The workflow
     .github/workflows/comparator.yml runs lake comparator on the six
-    compared theorems.
-  # TODO(Adam): state whether there has been any human peer review.
+    compared theorems. No human peer review.

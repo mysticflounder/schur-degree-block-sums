@@ -353,7 +353,7 @@ $R_5(3)$. Our solver searches did not find one; they were not exhaustive.
 # 7. Formal verification
 
 The main results of Sections 3 to 5 are formalized in Lean 4 [MU21] with
-Mathlib [mC20] (Lean v4.35.0-rc3): Theorem 1.1, the bound $L(5)\ge49$ of
+Mathlib [mC20] (Lean `v4.35.0-rc3`): Theorem 1.1, the bound $L(5)\ge49$ of
 Theorem 1.2, Lemma 4.1 and Corollary 4.2. The remarks and the computer
 checks are not formalized. The definitions follow [ER21], with sets of natural
 numbers and sequences given as lists of natural numbers; for a subset of
@@ -378,10 +378,11 @@ sums of $W$) are done by the Lean kernel with `decide`, without native
 code. The only axioms used are
 `propext`, `Classical.choice` and `Quot.sound`.
 
-The six main statements are also checked with the leanprover/comparator
-tool [LFRO]. The tool compares the statements, with every definition that
-they use, against a separate file that imports only Mathlib, and it checks
-the proofs with the Lean kernel and with the independent nanoda kernel.
+The six main statements are also checked with `lake comparator` [LFRO],
+which is part of Lake in the Lean toolchain. It compares the statements,
+with every definition that they use, against a separate file that imports
+only Mathlib, and it checks the proofs with the Lean kernel and with the
+independent kernels nanoda and con-ron.
 
 **Data and code availability.** The Lean source, the comparator
 configuration and programs for the computer checks are in the repository
@@ -462,8 +463,8 @@ takes responsibility for it.
   doi:10.1609/aaai.v32i1.12209. Preprint arXiv:1711.08076v1 (2017).
 - [Jun23] V. Jungić, Basics of Ramsey Theory, CRC Press, Boca Raton, FL
   (2023). doi:10.1201/9781003286370.
-- [LFRO] leanprover/comparator, software,
-  <https://github.com/leanprover/comparator>.
+- [LFRO] Lean FRO, `lake comparator`, in Lake, Lean 4 toolchain
+  v4.35.0-rc3, software. <https://github.com/leanprover/lean4>.
 - [mC20] The mathlib Community, The Lean mathematical library, in:
   Proceedings of the 9th ACM SIGPLAN International Conference on Certified
   Programs and Proofs (CPP 2020), ACM (2020), 367–381.
